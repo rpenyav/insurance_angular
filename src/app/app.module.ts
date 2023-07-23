@@ -4,28 +4,62 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { userReducer } from './store/user.reducer';
+
 import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './store/user.effects';
+
+import { AuthEffects } from './store/auth/auth.effects';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { authReducer } from './store/auth/auth.reducer';
+import { CookieService } from 'ngx-cookie-service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AuthPageViewComponent } from './pages/authentication/auth-page-view.component';
 import { HomePageViewComponent } from './pages/home-page-view/home-page-view.component';
+import { AuthfooterComponent } from './components/auth/authfooter.component';
+import { AuthheaderComponent } from './components/auth/authheader.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ForgotPasswordModalComponent } from './components/auth/forgot-password-modal.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageViewComponent
+    AuthPageViewComponent,
+    LayoutComponent,
+    HomePageViewComponent,
+    HeaderComponent,
+    FooterComponent,
+    AuthfooterComponent,
+    AuthheaderComponent,
+    ForgotPasswordModalComponent,
   ],
+
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({ users: userReducer }),
-    EffectsModule.forRoot([UserEffects])
-
+    StoreModule.forRoot({ auth: authReducer }),
+    EffectsModule.forRoot([AuthEffects]),
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    NgbModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
-  exports: [HomePageViewComponent] 
+  exports: [TranslateModule],
 })
-export class AppModule { }
-
-
-
+export class AppModule {}

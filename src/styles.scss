@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400;500;700&family=PT+Serif:wght@400;700&display=swap");
+
+/* Variables de colores */
+$orange-primary: #ffa500;
+$blue-accent: #007bff;
+$white-background: #ffffff;
+$text-primary: #333333;
+$orange-secondary: #ff6822;
+
+/* Estilos generales */
+body {
+  background-color: $white-background;
+  color: $text-primary;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Estilos para enlaces */
+a {
+  color: $blue-accent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Efecto de transición suave al cambiar el color */
+}
+
+a:hover {
+  color: darken(
+    $blue-accent,
+    10%
+  ); /* Al pasar el ratón, el color se oscurece un 10% */
+}
+
+h2 {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+/* Estilos para botones */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $orange-primary;
+  color: $white-background;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Efecto de transición suave al cambiar el color de fondo */
+}
+
+.button:hover {
+  background-color: darken($orange-primary, 10%);
+}
+
+.line-styled {
+  min-height: 10vh;
+  background-color: $orange-primary;
+  border-bottom: 8px solid $blue-accent;
+  padding: 10px; /* Ajusta el padding según tus necesidades */
+  color: $text-primary;
+}
+
+.line-styled-reverse {
+  min-height: 10vh;
+  background-color: $orange-primary;
+  border-top: 8px solid $blue-accent;
+  padding: 10px; /* Ajusta el padding según tus necesidades */
+  color: $text-primary;
+}
+
+.container-auth {
+  min-height: 80vh; /* Altura mínima del contenedor al 90% del alto de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-svg {
+  width: 50px; /* Establece el ancho deseado */
+  height: 50px; /* Establece la altura deseada */
+}
+
+.ancho-divisor-20 {
+  width: 20px;
+}
+
+.auth-style label {
+  font-size: 14px;
+}
+
+.custom-btn {
+  border-radius: 999px; /* Un valor grande para hacer los bordes circulares */
+  width: 100%; /* Ancho expandido */
+  background-color: $orange-secondary;
+  border: 0px;
+}
+
+.selected-language {
+  background-color: #007bff;
+  color: white;
+}
