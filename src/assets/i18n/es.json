@@ -1,0 +1,13 @@
+{
+    "auth_title": "Insurance Company",
+    "auth_remember": "Recordarme",
+    "auth_forgotpassword": "¿Olvidaste tu contraseña?",
+    "auth_submit": "Ingresar",
+    "auth_password": "Contraseña",
+    "auth_username": "Usuario",
+    "auth_username_required": "El e-mail es necesario",
+    "auth_username_invalid": "El e-mail no es válido",
+    "auth_password_minlength": "El passwrod debe tener más de 5 carácteres",
+    "auth_password_required": "El password es obligatorio",
+    "home_title": "Título"
+}

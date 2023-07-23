@@ -1,0 +1,13 @@
+{
+    "auth_title": "Insurance Company",
+    "auth_remember": "Remember me",
+    "auth_forgotpassword": "Forgot your password?",
+    "auth_submit": "Login",
+    "auth_password": "Password",
+    "auth_username": "Username",
+    "auth_username_required": "E-mail is required",
+    "auth_username_invalid": "E-mail is not valid",
+    "auth_password_minlength": "Password will be more than 5 characters",
+    "auth_password_required": "Password is required",
+    "home_title": "Title"
+}

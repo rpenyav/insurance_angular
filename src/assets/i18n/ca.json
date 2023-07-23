@@ -1,0 +1,13 @@
+{
+    "auth_title": "Insurance Company",
+    "auth_remember": "Recordar-me",
+    "auth_forgotpassword": "Has oblidat la contrassenya?",
+    "auth_submit": "Accedir",
+    "auth_password": "Contrassenya",
+    "auth_username": "Usuari",
+    "auth_username_required": "El e-mail es necessari",
+    "auth_username_invalid": "El e-mail no es vàlid",
+    "auth_password_minlength": "El passwrod ha de tenir més de 5 carácters",
+    "auth_password_required": "El password es obligatori",
+    "home_title": "Títol"
+}

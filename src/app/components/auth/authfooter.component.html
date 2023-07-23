@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col line-styled-reverse text-center d-flex justify-content-center align-items-center"
+    >
+      <div>&copy;{{ currentYear }}</div>
+      <div class="ancho-divisor-20"></div>
+      -
+      <div class="ancho-divisor-20"></div>
+      <div class="language-links ml-2">
+        <select
+          [value]="currentLanguage"
+          (change)="switchLanguage($event.target)"
+        >
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ca">Català</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
