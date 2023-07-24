@@ -1,3 +1,4 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -18,7 +19,6 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "emitDecoratorMetadata": true,
     "lib": [
       "ES2022",
       "dom"
@@ -30,12 +30,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": ["src/**/*.ts", "src/**/*.spec.ts"],
-  "typedocOptions": {
-    "out": "./doc",
-    "name": "Insurance Company",
-    "excludeExternals": true,
-    "excludePrivate": true,
-    "excludeProtected": true
-  }
+  "include": ["src/**/*.ts", "src/**/*.spec.ts"]
 }
