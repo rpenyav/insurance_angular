@@ -1,27 +1,50 @@
-# Insurance
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 
-## Development server
+# Proyecto de Aplicación para Seguros
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto es una aplicación para la gestión de seguros, desarrollada por [Rafa Peña](mailto:rafa@rafapenya.com).
 
-## Code scaffolding
+## Instrucciones
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de levantar esta aplicación, asegúrate de seguir estos pasos para levantar el backend:
 
-## Build
+1. Clona el repositorio del backend desde GitHub: `git clone https://github.com/rpenyav/nest_backend.git`
+2. Instala las dependencias del backend: `yarn install`
+3. Rellena y renombra el archivo `.env.template` a `.env` para configurar la conexión a la base de datos.
+4. Levanta los contenedores de Docker y la base de datos MySQL localmente: `docker-compose up -d`
+5. Inicia el backend en modo desarrollo: `start:dev:docker`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Una vez hayas configurado y levantado el backend, puedes proceder a levantar esta aplicación siguiendo las instrucciones previamente proporcionadas.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Ejecución del frontend
+Para ejecutar la aplicación, sigue los siguientes pasos:
 
-## Running end-to-end tests
+1. Clona el repositorio desde GitHub: `git clone https://github.com/rpenyav/insurance_angular.git`
+2. Instala las dependencias: `npm install`
+3. Renombra el archivo `.env.template` a `.env` y configura las variables de entorno necesarias.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Build
+Para compilar el proyecto, utiliza el siguiente comando: `ng build`. Los archivos compilados se guardarán en la carpeta `dist/`.
 
-## Further help
+### Test
+Los test unitarios se realizan con Karma. Para ejecutar los tests, utiliza el siguiente comando: `ng test`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Documentación
+
+Este proyecto utiliza [Compodoc](https://compodoc.app/) para generar la documentación del código. Puedes acceder a la documentación en el path: [Documentación](/documentation dentro del proyecto).
+
+## ESlint
+
+El proyecto utiliza ESlint para mantener un código limpio y consistente. Las reglas de linting se encuentran configuradas en el archivo `.eslintrc.js`.
+
+## Renovate
+
+Renovate es una herramienta que automatiza las actualizaciones de dependencias en el proyecto. Ayuda a mantener las dependencias actualizadas con las últimas versiones disponibles, lo que mejora la seguridad y la estabilidad del proyecto.
+
+## Docker
+
+Este proyecto está dockerizado y preparado para el despliegue. Puedes construir la imagen de Docker utilizando el archivo `Dockerfile` y luego ejecutar la aplicación en un contenedor.
+
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme o abrir un problema en el repositorio de GitHub. ¡Gracias por tu interés en este proyecto!
