@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -24,7 +25,7 @@ export class AuthenticationService {
   isAuthenticated = this._isAuthenticated.asObservable();
 
   login(username: string, password: string): Observable<any> {
-    const url = 'http://localhost:3001/auth/login';
+    const url = `${environment.apiURL}/auth/login`;
     return this.http.post(url, { username, password }).pipe(
       map((response: any) => {
         this.cookieService.set('accessToken', response.accessToken); // Guarda el token en las cookies
@@ -42,7 +43,7 @@ export class AuthenticationService {
   }
 
   refreshToken(token: string): Observable<any> {
-    const url = 'http://localhost:3001/auth/refresh';
+    const url = `${environment.apiURL}/auth/refresh`;
     return this.http.post(url, { accessToken: token }).pipe(
       map((response: any) => {
         this.cookieService.set('accessToken', response.accessToken); // Guarda el token renovado en las cookies

@@ -27,7 +27,7 @@ export class AuthPageViewComponent implements OnInit {
     private modalService: NgbModal,
   ) {
     this.authentication = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]], // Add email validator
+      username: ['magonz@gmail.com', [Validators.required, Validators.email]], // Add email validator
       password: ['12345678', [Validators.required, Validators.minLength(5)]],
       remember: [false],
     });

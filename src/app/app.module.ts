@@ -23,6 +23,13 @@ import { AuthfooterComponent } from './components/auth/authfooter.component';
 import { AuthHeaderComponent } from './components/auth/authheader.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordModalComponent } from './components/auth/forgot-password-modal.component';
+import { AboutModule } from './pages/about/about.module';
+import { SimuladorModule } from './pages/simulador/simulador.module';
+import { ServiciosModule } from './pages/servicios/servicios.module';
+import { GestionesModule } from './pages/gestiones/gestiones.module';
+import { Error404Component } from './pages/error-pages/error404.component';
+import { Error400Component } from './pages/error-pages/error400.component';
+import { Error500Component } from './pages/error-pages/error500.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -39,6 +46,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthfooterComponent,
     AuthHeaderComponent,
     ForgotPasswordModalComponent,
+    Error404Component,
+    Error400Component,
+    Error500Component,
   ],
 
   imports: [
@@ -57,6 +67,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
     NgbModule,
+    AboutModule,
+    SimuladorModule,
+    ServiciosModule,
+    GestionesModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
