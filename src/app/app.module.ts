@@ -20,7 +20,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { AuthPageViewComponent } from './pages/authentication/auth-page-view.component';
 import { HomePageViewComponent } from './pages/home-page-view/home-page-view.component';
 import { AuthfooterComponent } from './components/auth/authfooter.component';
-import { AuthheaderComponent } from './components/auth/authheader.component';
+import { AuthHeaderComponent } from './components/auth/authheader.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordModalComponent } from './components/auth/forgot-password-modal.component';
 
@@ -37,7 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     AuthfooterComponent,
-    AuthheaderComponent,
+    AuthHeaderComponent,
     ForgotPasswordModalComponent,
   ],
 

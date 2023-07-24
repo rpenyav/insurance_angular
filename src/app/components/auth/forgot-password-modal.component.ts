@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { UserService } from 'src/app/services/user.service';
-import { Observer } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({

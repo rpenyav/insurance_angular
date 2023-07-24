@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import { login, loginSuccess } from 'src/app/store/auth/auth.actions';
+import { login } from 'src/app/store/auth/auth.actions';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'src/app/services/language.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordModalComponent } from 'src/app/components/auth/forgot-password-modal.component';
 
@@ -53,7 +51,7 @@ export class AuthPageViewComponent implements OnInit {
         if (accessToken) {
           if (this.authentication.get('remember')?.value) {
             // Creamos una nueva fecha para la expiración
-            let expirationDate = new Date();
+            const expirationDate = new Date();
             expirationDate.setDate(expirationDate.getDate() + 1); // Añadimos un día
 
             // Almacenamos el token en las cookies
