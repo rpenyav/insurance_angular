@@ -1,3 +1,122 @@
 <app-layout>
-  <p>{{ "home_title" | translate }}</p>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-image-container">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/07/07/05/56/bird-8111792_1280.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-image-container">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/05/26/12/31/couple-8019370_1280.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-image-container">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_1280.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-caption-left d-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container mt-md-5 mt-3">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#">
+          <div class="image-container image1">
+            <div class="text-overlay">
+              <p>Lorem ipsum</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">
+          <div class="image-container image2">
+            <div class="text-overlay">
+              <p>Lorem ipsum</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">
+          <div class="image-container image3">
+            <div class="text-overlay">
+              <p>Lorem ipsum</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </app-layout>

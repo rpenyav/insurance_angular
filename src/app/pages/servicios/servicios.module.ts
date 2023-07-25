@@ -17,12 +17,15 @@ import { VidaParticularesComponent } from './particulares/vida-particulares/vida
 import { SaludParticularesComponent } from './particulares/salud-particulares/salud-particulares.component';
 import { AhorroParticularesComponent } from './particulares/ahorro-particulares/ahorro-particulares.component';
 import { OtrosParticularesComponent } from './particulares/otros-particulares/otros-particulares.component';
+import { IndexServiciosComponent } from './index-servicios.component';
+import { SharedModule } from 'src/app/shared.module';
 
 const routes: Routes = [
   {
     path: '',
     canActivate: [AuthGuard],
     children: [
+      { path: '', component: IndexServiciosComponent },
       { path: 'autonomos/salud', component: SaludAutonomosComponent },
       { path: 'autonomos/vehiculos', component: VehiculosAutonomosComponent },
       { path: 'autonomos/comercio', component: ComercioAutonomosComponent },
@@ -65,7 +68,8 @@ const routes: Routes = [
     SaludParticularesComponent,
     AhorroParticularesComponent,
     OtrosParticularesComponent,
+    IndexServiciosComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
 })
 export class ServiciosModule {}

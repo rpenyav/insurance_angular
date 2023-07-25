@@ -4,12 +4,15 @@ import { TramitesSaludComponent } from './tramites-salud/tramites-salud.componen
 import { PresupuestosComponent } from './presupuestos/presupuestos.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { IndexGestionesComponent } from './index-gestiones.component';
+import { SharedModule } from 'src/app/shared.module';
 
 const routes: Routes = [
   {
     path: '',
     canActivate: [AuthGuard],
     children: [
+      { path: '', component: IndexGestionesComponent },
       { path: 'tramites-salud', component: TramitesSaludComponent },
       { path: 'presupuestos', component: PresupuestosComponent },
     ],
@@ -17,7 +20,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TramitesSaludComponent, PresupuestosComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [
+    TramitesSaludComponent,
+    PresupuestosComponent,
+    IndexGestionesComponent,
+  ],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
 })
 export class GestionesModule {}
