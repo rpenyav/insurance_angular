@@ -28,22 +28,113 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="servicios">Servicios</a>
+
+                    <!-- Servicios -->
+                    <li class="nav-item" #serviciosMenuItem>
+                      <a
+                        class="nav-link"
+                        [ngClass]="{ active: isServiciosMenuVisible }"
+                        (mouseenter)="showMenu('servicios')"
+                      >
+                        {{ "menu.servicios.title" | translate }}
+                        <span
+                          class="caret"
+                          [ngClass]="{
+                            'caret-right': isServiciosMenuVisible,
+                            'caret-down': !isServiciosMenuVisible
+                          }"
+                        ></span>
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        [ngStyle]="{
+                          display: isServiciosMenuVisible ? 'flex' : 'none'
+                        }"
+                        (mouseleave)="hideAllMenus()"
+                      >
+                        <li *ngFor="let service of services">
+                          <a href="#">{{ service.name | translate }}</a>
+                          <ul *ngIf="service.subservices.length > 0">
+                            <li *ngFor="let subservice of service.subservices">
+                              <a [routerLink]="subservice.path">{{
+                                subservice.name | translate
+                              }}</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="gestiones">Gestiones</a>
+
+                    <!-- Gestiones -->
+                    <li class="nav-item" #gestionesMenuItem>
+                      <a
+                        class="nav-link"
+                        [ngClass]="{ active: isGestionesMenuVisible }"
+                        (mouseenter)="showMenu('gestiones')"
+                      >
+                        {{ "menu.gestiones.title" | translate }}
+                        <span
+                          class="caret"
+                          [ngClass]="{
+                            'caret-right': isGestionesMenuVisible,
+                            'caret-down': !isGestionesMenuVisible
+                          }"
+                        ></span>
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        [ngStyle]="{
+                          display: isGestionesMenuVisible ? 'flex' : 'none'
+                        }"
+                        (mouseleave)="hideAllMenus()"
+                      >
+                        <li *ngFor="let gestion of gestiones">
+                          <a [routerLink]="gestion.path">{{
+                            gestion.name | translate
+                          }}</a>
+                        </li>
+                      </ul>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about">About us</a>
+
+                    <!-- Acerca de nosotros -->
+                    <li class="nav-item" #aboutUsMenuItem>
+                      <a
+                        class="nav-link"
+                        [ngClass]="{ active: isAboutUsMenuVisible }"
+                        (mouseenter)="showMenu('aboutus')"
+                      >
+                        {{ "menu.aboutus.title" | translate }}
+                        <span
+                          class="caret"
+                          [ngClass]="{
+                            'caret-right': isAboutUsMenuVisible,
+                            'caret-down': !isAboutUsMenuVisible
+                          }"
+                        ></span>
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        [ngStyle]="{
+                          display: isAboutUsMenuVisible ? 'flex' : 'none'
+                        }"
+                        (mouseleave)="hideAllMenus()"
+                      >
+                        <li *ngFor="let about of aboutus">
+                          <a [routerLink]="about.path">{{
+                            about.name | translate
+                          }}</a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                  <form class="d-flex ms-auto">
+                  <form class="d-flex ms-auto" (submit)="search($event)">
                     <input
                       class="form-control me-2"
                       type="search"
-                      placeholder="Buscar"
+                      placeholder="{{ 'search' | translate }}"
                       aria-label="Search"
+                      [(ngModel)]="searchTerm"
+                      name="searchTerm"
                     />
                     <button
                       class="btn btn-outline-light rounded-circle"
@@ -52,6 +143,7 @@
                       <i class="bi bi-search"></i>
                     </button>
                   </form>
+
                   <div class="language-links ms-3">
                     <select
                       class="custom-select-with-caret"

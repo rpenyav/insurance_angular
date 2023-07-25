@@ -272,6 +272,14 @@ import { LayoutComponent } from &#x27;./layout/layout.component&#x27;;
 import { FooterComponent } from &#x27;./layout/footer/footer.component&#x27;;
 import { HeaderComponent } from &#x27;./layout/header/header.component&#x27;;
 import { NavbarComponent } from &#x27;./components/ui/navbar.component&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { TranslateModule, TranslateLoader } from &#x27;@ngx-translate/core&#x27;;
+import { TranslateHttpLoader } from &#x27;@ngx-translate/http-loader&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, &#x27;assets/i18n/&#x27;);
+}
 
 @NgModule({
   declarations: [
@@ -280,7 +288,17 @@ import { NavbarComponent } from &#x27;./components/ui/navbar.component&#x27;;
     FooterComponent,
     NavbarComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
   exports: [LayoutComponent, HeaderComponent, FooterComponent, NavbarComponent],
 })
 export class SharedModule {}

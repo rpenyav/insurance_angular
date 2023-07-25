@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-
 import { EffectsModule } from '@ngrx/effects';
-
 import { AuthEffects } from './store/auth/auth.effects';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -29,7 +27,7 @@ import { Error500Component } from './pages/error-pages/error500.component';
 import { SharedModule } from './shared.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'assets/i18n/');
 }
 
 @NgModule({
@@ -37,7 +35,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     AuthPageViewComponent,
     HomePageViewComponent,
-
     AuthfooterComponent,
     AuthHeaderComponent,
     ForgotPasswordModalComponent,
@@ -45,7 +42,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     Error400Component,
     Error500Component,
   ],
-
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -70,6 +66,5 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
-  exports: [TranslateModule],
 })
 export class AppModule {}

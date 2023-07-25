@@ -75,6 +75,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Define la interfaz del estado global de la aplicación.
+Este estado incluye una lista de usuarios.</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -137,6 +145,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Una lista de usuarios en el estado de la aplicación.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -144,9 +158,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { User } from &#x27;../models/user.model&#x27;; // Asegúrate de importar el modelo User desde su ubicación correcta
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { User } from &#x27;../models/user.model&#x27;;
 
+/**
+ * Define la interfaz del estado global de la aplicación.
+ * Este estado incluye una lista de usuarios.
+ * @interface
+ */
 export interface AppState {
+  /** Una lista de usuarios en el estado de la aplicación. */
   users: User[];
 }
 </code></pre>

@@ -7,7 +7,9 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { OficinasComponent } from './oficinas/oficinas.component';
 import { TalleresComponent } from './talleres/talleres.component';
 import { IndexAboutComponent } from './index-about.component';
-import { SharedModule } from 'src/app/shared.module';
+import { HttpLoaderFactory, SharedModule } from 'src/app/shared.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -31,6 +33,12 @@ const routes: Routes = [
     TalleresComponent,
     IndexAboutComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule], // include AppModule here
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    TranslateModule.forChild(),
+  ],
+  exports: [IndexAboutComponent],
 })
 export class AboutModule {}

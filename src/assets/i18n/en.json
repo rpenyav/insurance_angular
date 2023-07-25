@@ -9,5 +9,52 @@
     "auth_username_invalid": "E-mail is not valid",
     "auth_password_minlength": "Password will be more than 5 characters",
     "auth_password_required": "Password is required",
-    "home_title": "Title"
+    "home_title": "Title",
+    "search": "Search",
+    "footer": {
+        "sitemap": "Sitemap",
+        "disclaimers": "Disclaimers",
+        "contacta": "Contact us"
+    },
+    "menu": {
+        "servicios": {
+            "title": "Services",
+            "autonomos": {
+                "title": "Self-employed",
+                "accidentes": "Accidents",
+                "comercios": "Businesses",
+                "pensiones": "Pensions",
+                "salud": "Health",
+                "vehiculos": "Vehicles"
+            },
+            "empresas": {
+                "title": "Companies",
+                "pensiones": "Pensions",
+                "salud": "Health",
+                "rc": "Civil Liability",
+                "otros": "Others"
+            },
+            "particulares": {
+                "title": "Individuals",
+                "ahorro": "Savings",
+                "hogar": "Home",
+                "salud": "Health",
+                "vehiculo": "Vehicle",
+                "vida": "Life",
+                "otros": "Others"
+            }
+        },
+        "gestiones": {
+            "title": "Management",
+            "presupuestos": "Budgets",
+            "tramites": "Health Procedures"
+        },
+        "aboutus": {
+            "title": "About us",
+            "oficinas": "Offices",
+            "about": "About us",
+            "talleres": "Talleres",
+            "contacto": "Contact"
+        }
+    }
 }

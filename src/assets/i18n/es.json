@@ -9,5 +9,52 @@
     "auth_username_invalid": "El e-mail no es válido",
     "auth_password_minlength": "El passwrod debe tener más de 5 carácteres",
     "auth_password_required": "El password es obligatorio",
-    "home_title": "Título"
+    "home_title": "Título",
+    "search": "Buscar",
+    "footer": {
+        "sitemap": "Mapa del sitio",
+        "disclaimers": "Disclaimers",
+        "contacta": "Contacta"
+    },
+    "menu": {
+        "servicios": {
+            "title": "Servicios",
+            "autonomos": {
+                "title": "Autónomos",
+                "accidentes": "Accidentes",
+                "comercios": "Comercios",
+                "pensiones": "Pensiones",
+                "salud": "Salud",
+                "vehiculos": "Vehículos"
+            },
+            "empresas": {
+                "title": "Empresas",
+                "pensiones": "Pensiones",
+                "salud": "Salud",
+                "rc": "Responsabilidad civil",
+                "otros": "Otros"
+            },
+            "particulares": {
+                "title": "Particulares",
+                "ahorro": "Ahorro",
+                "hogar": "Hogar",
+                "salud": "Salud",
+                "vehiculo": "Vehículo",
+                "vida": "Vida",
+                "otros": "Otros"
+            }
+        },
+        "gestiones": {
+            "title": "Gestiones",
+            "presupuestos": "Presupuestos",
+            "tramites": "Trámites de salud"
+        },
+        "aboutus": {
+            "title": "About us",
+            "oficinas": "Oficinas",
+            "talleres": "Talleres",
+            "about": "Sobre nosotros",
+            "contacto": "Contacto"
+        }
+    }
 }

@@ -3,7 +3,19 @@
     <div class="col">
       <div class="container">
         <div class="row text-center">
-          <div class="col">sitemap | disclaimers | about</div>
+          <div class="col">
+            <a [routerLink]="['/sitemap']">
+              {{ "footer.sitemap" | translate }}
+            </a>
+            |
+            <a [routerLink]="['/disclaimers']"
+              >{{ "footer.disclaimers" | translate }}
+            </a>
+            |
+            <a [routerLink]="['/about/aboutus']">{{
+              "footer.contacta" | translate
+            }}</a>
+          </div>
         </div>
       </div>
     </div>
