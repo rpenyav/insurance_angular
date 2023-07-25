@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -14,9 +13,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { authReducer } from './store/auth/auth.reducer';
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { LayoutComponent } from './layout/layout.component';
 import { AuthPageViewComponent } from './pages/authentication/auth-page-view.component';
 import { HomePageViewComponent } from './pages/home-page-view/home-page-view.component';
 import { AuthfooterComponent } from './components/auth/authfooter.component';
@@ -30,6 +26,7 @@ import { GestionesModule } from './pages/gestiones/gestiones.module';
 import { Error404Component } from './pages/error-pages/error404.component';
 import { Error400Component } from './pages/error-pages/error400.component';
 import { Error500Component } from './pages/error-pages/error500.component';
+import { SharedModule } from './shared.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -39,10 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     AuthPageViewComponent,
-    LayoutComponent,
     HomePageViewComponent,
-    HeaderComponent,
-    FooterComponent,
+
     AuthfooterComponent,
     AuthHeaderComponent,
     ForgotPasswordModalComponent,
@@ -71,6 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SimuladorModule,
     ServiciosModule,
     GestionesModule,
+    SharedModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

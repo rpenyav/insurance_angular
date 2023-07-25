@@ -1,0 +1,139 @@
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  background-size: cover;
+  background-position: center;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image1 {
+  background-image: url("https://cdn.pixabay.com/photo/2023/07/07/05/56/bird-8111792_1280.jpg");
+}
+
+.image2 {
+  background-image: url("https://cdn.pixabay.com/photo/2023/05/26/12/31/couple-8019370_1280.jpg");
+}
+
+.image3 {
+  background-image: url("https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_1280.png");
+}
+
+.carousel-item {
+  height: 70vh;
+  min-height: 350px;
+  background: no-repeat center calc(50% - 800px) scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: auto;
+    min-height: 100px;
+  }
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption-left h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+
+  .carousel-caption-left h5 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+
+  transform: translate(80%, -30%);
+  text-align: left;
+  max-width: 50%;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 40%;
+    max-width: 100%;
+    text-align: center;
+    transform: translate(0%, 60%);
+  }
+}
+
+.carousel-caption-left {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: right;
+  max-width: 50%;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption-left {
+    top: 0px;
+    max-width: 100%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 10%);
+  }
+}
+
+.carousel-image-container {
+  transform: translateY(-200px);
+}
+
+@media (max-width: 768px) {
+  .carousel-image-container img {
+    transform: translateY(200px);
+    width: auto;
+    height: 250px !important;
+  }
+}

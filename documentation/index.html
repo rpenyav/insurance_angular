@@ -31,20 +31,38 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Insurance</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 16.1.5.</p>
-<h2>Development server</h2>
-<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application will automatically reload if you change any of the source files.</p>
-<h2>Code scaffolding</h2>
-<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2>Build</h2>
-<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
-<h2>Running unit tests</h2>
-<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2>Running end-to-end tests</h2>
-<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
-<h2>Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+<h1>Proyecto de Aplicación para Seguros</h1>
+<p>Este proyecto es una aplicación para la gestión de seguros, desarrollada por <a href="mailto:rafa@rafapenya.com">Rafa Peña</a>.</p>
+<h2>Instrucciones</h2>
+<p>Antes de levantar esta aplicación, asegúrate de seguir estos pasos para levantar el backend:</p>
+<ol>
+<li>Clona el repositorio del backend desde GitHub: <code>git clone https://github.com/rpenyav/nest_backend.git</code></li>
+<li>Instala las dependencias del backend: <code>yarn install</code></li>
+<li>Rellena y renombra el archivo <code>.env.template</code> a <code>.env</code> para configurar la conexión a la base de datos.</li>
+<li>Levanta los contenedores de Docker y la base de datos MySQL localmente: <code>docker-compose up -d</code></li>
+<li>Inicia el backend en modo desarrollo: <code>start:dev:docker</code></li>
+</ol>
+<p>Una vez hayas configurado y levantado el backend, puedes proceder a levantar esta aplicación siguiendo las instrucciones previamente proporcionadas.</p>
+<h3>Ejecución del frontend</h3>
+<p>Para ejecutar la aplicación, sigue los siguientes pasos:</p>
+<ol>
+<li>Clona el repositorio desde GitHub: <code>git clone https://github.com/rpenyav/insurance_angular.git</code></li>
+<li>Instala las dependencias: <code>npm install</code></li>
+<li>Renombra el archivo <code>.env.template</code> a <code>.env</code> y configura las variables de entorno necesarias.</li>
+</ol>
+<h3>Build</h3>
+<p>Para compilar el proyecto, utiliza el siguiente comando: <code>ng build</code>. Los archivos compilados se guardarán en la carpeta <code>dist/</code>.</p>
+<h3>Test</h3>
+<p>Los test unitarios se realizan con Karma. Para ejecutar los tests, utiliza el siguiente comando: <code>ng test</code>.</p>
+<h2>Documentación</h2>
+<p>Este proyecto utiliza <a href="https://compodoc.app/">Compodoc</a> para generar la documentación del código. Puedes acceder a la documentación en el path: [Documentación](/documentation dentro del proyecto).</p>
+<h2>ESlint</h2>
+<p>El proyecto utiliza ESlint para mantener un código limpio y consistente. Las reglas de linting se encuentran configuradas en el archivo <code>.eslintrc.js</code>.</p>
+<h2>Renovate</h2>
+<p>Renovate es una herramienta que automatiza las actualizaciones de dependencias en el proyecto. Ayuda a mantener las dependencias actualizadas con las últimas versiones disponibles, lo que mejora la seguridad y la estabilidad del proyecto.</p>
+<h2>Docker</h2>
+<p>Este proyecto está dockerizado y preparado para el despliegue. Puedes construir la imagen de Docker utilizando el archivo <code>Dockerfile</code> y luego ejecutar la aplicación en un contenedor.</p>
+<p>Si tienes alguna pregunta o sugerencia, no dudes en contactarme o abrir un problema en el repositorio de GitHub. ¡Gracias por tu interés en este proyecto!</p>
 
 
 

@@ -245,7 +245,126 @@ export class HomePageViewComponent implements OnInit {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-layout&gt;
-  &lt;p&gt;{{ &quot;home_title&quot; | translate }}&lt;/p&gt;
+  &lt;div
+    id&#x3D;&quot;carouselExampleIndicators&quot;
+    class&#x3D;&quot;carousel slide&quot;
+    data-bs-ride&#x3D;&quot;carousel&quot;
+    data-bs-interval&#x3D;&quot;5000&quot;
+  &gt;
+    &lt;div class&#x3D;&quot;carousel-indicators&quot;&gt;
+      &lt;button
+        type&#x3D;&quot;button&quot;
+        data-bs-target&#x3D;&quot;#carouselExampleIndicators&quot;
+        data-bs-slide-to&#x3D;&quot;0&quot;
+        class&#x3D;&quot;active&quot;
+        aria-current&#x3D;&quot;true&quot;
+        aria-label&#x3D;&quot;Slide 1&quot;
+      &gt;&lt;/button&gt;
+      &lt;button
+        type&#x3D;&quot;button&quot;
+        data-bs-target&#x3D;&quot;#carouselExampleIndicators&quot;
+        data-bs-slide-to&#x3D;&quot;1&quot;
+        aria-label&#x3D;&quot;Slide 2&quot;
+      &gt;&lt;/button&gt;
+      &lt;button
+        type&#x3D;&quot;button&quot;
+        data-bs-target&#x3D;&quot;#carouselExampleIndicators&quot;
+        data-bs-slide-to&#x3D;&quot;2&quot;
+        aria-label&#x3D;&quot;Slide 3&quot;
+      &gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
+      &lt;div class&#x3D;&quot;carousel-item active&quot;&gt;
+        &lt;div class&#x3D;&quot;carousel-image-container&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://cdn.pixabay.com/photo/2023/07/07/05/56/bird-8111792_1280.jpg&quot;
+            class&#x3D;&quot;d-block w-100&quot;
+            alt&#x3D;&quot;...&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;carousel-caption d-block&quot;&gt;
+            &lt;h5&gt;First slide label&lt;/h5&gt;
+            &lt;p&gt;Some representative placeholder content for the first slide.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;carousel-item&quot;&gt;
+        &lt;div class&#x3D;&quot;carousel-image-container&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://cdn.pixabay.com/photo/2023/05/26/12/31/couple-8019370_1280.jpg&quot;
+            class&#x3D;&quot;d-block w-100&quot;
+            alt&#x3D;&quot;...&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;carousel-caption d-block&quot;&gt;
+            &lt;h5&gt;Second slide label&lt;/h5&gt;
+            &lt;p&gt;Some representative placeholder content for the second slide.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;carousel-item&quot;&gt;
+        &lt;div class&#x3D;&quot;carousel-image-container&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_1280.png&quot;
+            class&#x3D;&quot;d-block w-100&quot;
+            alt&#x3D;&quot;...&quot;
+          /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;carousel-caption-left d-block&quot;&gt;
+          &lt;h5&gt;Third slide label&lt;/h5&gt;
+          &lt;p&gt;Some representative placeholder content for the third slide.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button
+      class&#x3D;&quot;carousel-control-prev&quot;
+      type&#x3D;&quot;button&quot;
+      data-bs-target&#x3D;&quot;#carouselExampleIndicators&quot;
+      data-bs-slide&#x3D;&quot;prev&quot;
+    &gt;
+      &lt;span class&#x3D;&quot;carousel-control-prev-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button
+      class&#x3D;&quot;carousel-control-next&quot;
+      type&#x3D;&quot;button&quot;
+      data-bs-target&#x3D;&quot;#carouselExampleIndicators&quot;
+      data-bs-slide&#x3D;&quot;next&quot;
+    &gt;
+      &lt;span class&#x3D;&quot;carousel-control-next-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;container mt-md-5 mt-3&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;a href&#x3D;&quot;#&quot;&gt;
+          &lt;div class&#x3D;&quot;image-container image1&quot;&gt;
+            &lt;div class&#x3D;&quot;text-overlay&quot;&gt;
+              &lt;p&gt;Lorem ipsum&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;a href&#x3D;&quot;#&quot;&gt;
+          &lt;div class&#x3D;&quot;image-container image2&quot;&gt;
+            &lt;div class&#x3D;&quot;text-overlay&quot;&gt;
+              &lt;p&gt;Lorem ipsum&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;a href&#x3D;&quot;#&quot;&gt;
+          &lt;div class&#x3D;&quot;image-container image3&quot;&gt;
+            &lt;div class&#x3D;&quot;text-overlay&quot;&gt;
+              &lt;p&gt;Lorem ipsum&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/app-layout&gt;
 </code></pre>
     </div>
@@ -254,7 +373,146 @@ export class HomePageViewComponent implements OnInit {
                 <p class="comment">
                     <code>./home-page-view.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  background-size: cover;
+  background-position: center;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image1 {
+  background-image: url(&quot;https://cdn.pixabay.com/photo/2023/07/07/05/56/bird-8111792_1280.jpg&quot;);
+}
+
+.image2 {
+  background-image: url(&quot;https://cdn.pixabay.com/photo/2023/05/26/12/31/couple-8019370_1280.jpg&quot;);
+}
+
+.image3 {
+  background-image: url(&quot;https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_1280.png&quot;);
+}
+
+.carousel-item {
+  height: 70vh;
+  min-height: 350px;
+  background: no-repeat center calc(50% - 800px) scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: auto;
+    min-height: 100px;
+  }
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption-left h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+
+  .carousel-caption-left h5 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+
+  transform: translate(80%, -30%);
+  text-align: left;
+  max-width: 50%;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 40%;
+    max-width: 100%;
+    text-align: center;
+    transform: translate(0%, 60%);
+  }
+}
+
+.carousel-caption-left {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: right;
+  max-width: 50%;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption-left {
+    top: 0px;
+    max-width: 100%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 10%);
+  }
+}
+
+.carousel-image-container {
+  transform: translateY(-200px);
+}
+
+@media (max-width: 768px) {
+  .carousel-image-container img {
+    transform: translateY(200px);
+    width: auto;
+    height: 250px !important;
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -282,8 +540,8 @@ export class HomePageViewComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-layout>  <p>{{ "home_title" | translate }}</p></app-layout></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthfooterComponent', 'selector': 'app-authfooter'},{'name': 'AuthHeaderComponent', 'selector': 'app-authheader'},{'name': 'AuthPageViewComponent', 'selector': 'app-auth-page-view'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordModalComponent', 'selector': 'app-forgot-password-modal'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomePageViewComponent', 'selector': 'app-home-page-view'},{'name': 'LayoutComponent', 'selector': 'app-layout'}];
+        var COMPONENT_TEMPLATE = '<div><app-layout>  <div    id="carouselExampleIndicators"    class="carousel slide"    data-bs-ride="carousel"    data-bs-interval="5000"  >    <div class="carousel-indicators">      <button        type="button"        data-bs-target="#carouselExampleIndicators"        data-bs-slide-to="0"        class="active"        aria-current="true"        aria-label="Slide 1"      ></button>      <button        type="button"        data-bs-target="#carouselExampleIndicators"        data-bs-slide-to="1"        aria-label="Slide 2"      ></button>      <button        type="button"        data-bs-target="#carouselExampleIndicators"        data-bs-slide-to="2"        aria-label="Slide 3"      ></button>    </div>    <div class="carousel-inner">      <div class="carousel-item active">        <div class="carousel-image-container">          <img            src="https://cdn.pixabay.com/photo/2023/07/07/05/56/bird-8111792_1280.jpg"            class="d-block w-100"            alt="..."          />          <div class="carousel-caption d-block">            <h5>First slide label</h5>            <p>Some representative placeholder content for the first slide.</p>          </div>        </div>      </div>      <div class="carousel-item">        <div class="carousel-image-container">          <img            src="https://cdn.pixabay.com/photo/2023/05/26/12/31/couple-8019370_1280.jpg"            class="d-block w-100"            alt="..."          />          <div class="carousel-caption d-block">            <h5>Second slide label</h5>            <p>Some representative placeholder content for the second slide.</p>          </div>        </div>      </div>      <div class="carousel-item">        <div class="carousel-image-container">          <img            src="https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_1280.png"            class="d-block w-100"            alt="..."          />        </div>        <div class="carousel-caption-left d-block">          <h5>Third slide label</h5>          <p>Some representative placeholder content for the third slide.</p>        </div>      </div>    </div>    <button      class="carousel-control-prev"      type="button"      data-bs-target="#carouselExampleIndicators"      data-bs-slide="prev"    >      <span class="carousel-control-prev-icon" aria-hidden="true"></span>      <span class="visually-hidden">Previous</span>    </button>    <button      class="carousel-control-next"      type="button"      data-bs-target="#carouselExampleIndicators"      data-bs-slide="next"    >      <span class="carousel-control-next-icon" aria-hidden="true"></span>      <span class="visually-hidden">Next</span>    </button>  </div>  <div class="container mt-md-5 mt-3">    <div class="row">      <div class="col-md-4">        <a href="#">          <div class="image-container image1">            <div class="text-overlay">              <p>Lorem ipsum</p>            </div>          </div>        </a>      </div>      <div class="col-md-4">        <a href="#">          <div class="image-container image2">            <div class="text-overlay">              <p>Lorem ipsum</p>            </div>          </div>        </a>      </div>      <div class="col-md-4">        <a href="#">          <div class="image-container image3">            <div class="text-overlay">              <p>Lorem ipsum</p>            </div>          </div>        </a>      </div>    </div>  </div></app-layout></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AccidentesAutonomosComponent', 'selector': 'app-accidentes-autonomos'},{'name': 'AhorroParticularesComponent', 'selector': 'app-ahorro-particulares'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthfooterComponent', 'selector': 'app-authfooter'},{'name': 'AuthHeaderComponent', 'selector': 'app-authheader'},{'name': 'AuthPageViewComponent', 'selector': 'app-auth-page-view'},{'name': 'ComercioAutonomosComponent', 'selector': 'app-comercio-autonomos'},{'name': 'ContactoComponent', 'selector': 'app-contacto'},{'name': 'Error400Component', 'selector': 'app-error400'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'Error500Component', 'selector': 'app-error500'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordModalComponent', 'selector': 'app-forgot-password-modal'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HogarParticularesComponent', 'selector': 'app-hogar-particulares'},{'name': 'HomePageViewComponent', 'selector': 'app-home-page-view'},{'name': 'IndexAboutComponent', 'selector': 'app-index-about'},{'name': 'IndexGestionesComponent', 'selector': 'app-index-gestiones'},{'name': 'IndexServiciosComponent', 'selector': 'app-index-servicios'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OficinasComponent', 'selector': 'app-oficinas'},{'name': 'OtrosEmpresasComponent', 'selector': 'app-otros-empresas'},{'name': 'OtrosParticularesComponent', 'selector': 'app-otros-particulares'},{'name': 'PensionesAutonomosComponent', 'selector': 'app-pensiones-autonomos'},{'name': 'PensionesEmpresasComponent', 'selector': 'app-pensiones-empresas'},{'name': 'PresupuestosComponent', 'selector': 'app-presupuestos'},{'name': 'ResponsabilidadCivilEmpresasComponent', 'selector': 'app-responsabilidad-civil-empresas'},{'name': 'SaludAutonomosComponent', 'selector': 'app-salud-autonomos'},{'name': 'SaludEmpresasComponent', 'selector': 'app-salud-empresas'},{'name': 'SaludParticularesComponent', 'selector': 'app-salud-particulares'},{'name': 'StartSimulatorComponent', 'selector': 'app-start-simulator'},{'name': 'TalleresComponent', 'selector': 'app-talleres'},{'name': 'TramitesSaludComponent', 'selector': 'app-tramites-salud'},{'name': 'VehiculoParticularesComponent', 'selector': 'app-vehiculo-particulares'},{'name': 'VehiculosAutonomosComponent', 'selector': 'app-vehiculos-autonomos'},{'name': 'VidaParticularesComponent', 'selector': 'app-vida-particulares'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomePageViewComponent'};
 </script>

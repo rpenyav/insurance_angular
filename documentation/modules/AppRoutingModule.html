@@ -83,11 +83,49 @@ import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { HomePageViewComponent } from &#x27;./pages/home-page-view/home-page-view.component&#x27;;
 import { AuthPageViewComponent } from &#x27;./pages/authentication/auth-page-view.component&#x27;;
 import { AuthGuard } from &#x27;./guards/auth.guard&#x27;;
+import { Error400Component } from &#x27;./pages/error-pages/error400.component&#x27;;
+import { Error404Component } from &#x27;./pages/error-pages/error404.component&#x27;;
+import { Error500Component } from &#x27;./pages/error-pages/error500.component&#x27;;
 
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, component: HomePageViewComponent, canActivate: [AuthGuard] },
   { path: &#x27;login&#x27;, component: AuthPageViewComponent },
+
+  {
+    //rutas del modulo About
+    path: &#x27;about&#x27;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x27;./pages/about/about.module&#x27;).then((m) &#x3D;&gt; m.AboutModule)&quot;,
+  },
+  {
+    //rutas del modulo Gestiones
+    path: &#x27;gestiones&#x27;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x27;./pages/gestiones/gestiones.module&#x27;).then(\
+        (m) &#x3D;&gt; m.GestionesModule,\
+      )&quot;,
+  },
+  {
+    //rutas del modulo Servicios
+    path: &#x27;servicios&#x27;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x27;./pages/servicios/servicios.module&#x27;).then(\
+        (m) &#x3D;&gt; m.ServiciosModule,\
+      )&quot;,
+  },
+  {
+    //rutas del modulo Simulador
+    path: &#x27;simulador&#x27;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x27;./pages/simulador/simulador.module&#x27;).then(\
+        (m) &#x3D;&gt; m.SimuladorModule,\
+      )&quot;,
+  },
   { path: &#x27;&#x27;, redirectTo: &#x27;/&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;404&#x27;, component: Error404Component },
+  { path: &#x27;500&#x27;, component: Error500Component },
+  { path: &#x27;400&#x27;, component: Error400Component },
+  { path: &#x27;**&#x27;, redirectTo: &#x27;/404&#x27; },
 ];
 
 @NgModule({
