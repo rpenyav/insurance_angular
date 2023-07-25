@@ -127,12 +127,14 @@
                       </ul>
                     </li>
                   </ul>
-                  <form class="d-flex ms-auto">
+                  <form class="d-flex ms-auto" (submit)="search($event)">
                     <input
                       class="form-control me-2"
                       type="search"
-                      placeholder="Buscar"
+                      placeholder="{{ 'search' | translate }}"
                       aria-label="Search"
+                      [(ngModel)]="searchTerm"
+                      name="searchTerm"
                     />
                     <button
                       class="btn btn-outline-light rounded-circle"
@@ -141,6 +143,7 @@
                       <i class="bi bi-search"></i>
                     </button>
                   </form>
+
                   <div class="language-links ms-3">
                     <select
                       class="custom-select-with-caret"

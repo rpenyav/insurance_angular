@@ -8,6 +8,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { RouterModule } from '@angular/router';
+import { SiteMapComponent } from './pages/site-map.component';
+import { DisclaimersComponent } from './pages/disclaimers.component';
+import { SearchComponent } from './pages/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/');
@@ -19,18 +23,22 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
+    SiteMapComponent,
+    DisclaimersComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
+    FormsModule,
+    TranslateModule.forChild(),
   ],
-  exports: [LayoutComponent, HeaderComponent, FooterComponent, NavbarComponent],
+  exports: [
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavbarComponent,
+    TranslateModule,
+  ],
 })
 export class SharedModule {}

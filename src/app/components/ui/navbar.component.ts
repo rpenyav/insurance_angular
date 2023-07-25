@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AuthenticationService } from '../../services/authentication.service';
 import { LanguageService } from '../../services/language.service';
 import { services, gestiones, aboutus } from '../../utils/menu-data';
+import { Router } from '@angular/router';
 
 /**
  * NavbarComponent - Componente para la barra de navegación
@@ -37,6 +38,11 @@ export class NavbarComponent implements OnInit {
    */
   public aboutus = aboutus;
 
+  /**
+   * Término de búsqueda para la funcionalidad de búsqueda
+   */
+  searchTerm: string = '';
+
   private _isServiciosMenuVisible = false;
   private _isGestionesMenuVisible = false;
   private _isAboutUsMenuVisible = false;
@@ -51,6 +57,7 @@ export class NavbarComponent implements OnInit {
     private authService: AuthenticationService,
     private store: Store,
     private languageService: LanguageService,
+    private router: Router,
   ) {}
 
   public get isServiciosMenuVisible() {
@@ -130,5 +137,15 @@ export class NavbarComponent implements OnInit {
     this.isServiciosMenuVisible = false;
     this.isGestionesMenuVisible = false;
     this.isAboutUsMenuVisible = false;
+  }
+
+  /**
+   * Maneja la búsqueda de la funcionalidad de búsqueda.
+   * @param event Evento de envío del formulario
+   */
+
+  search(event: Event) {
+    event.preventDefault(); // Previene la recarga de la página
+    this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } }); // Navega a la página de búsqueda con la consulta de búsqueda como parámetro de consulta
   }
 }

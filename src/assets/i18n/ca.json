@@ -10,6 +10,12 @@
     "auth_password_minlength": "El passwrod ha de tenir més de 5 carácters",
     "auth_password_required": "El password es obligatori",
     "home_title": "Títol",
+    "search": "Cercar",
+    "footer": {
+        "sitemap": "Sitemap",
+        "disclaimers": "Disclaimers",
+        "contacta": "Contacteu"
+    },
     "menu": {
         "servicios": {
             "title": "Serveis",

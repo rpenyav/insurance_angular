@@ -245,7 +245,9 @@ import { ContactoComponent } from &#x27;./contacto/contacto.component&#x27;;
 import { OficinasComponent } from &#x27;./oficinas/oficinas.component&#x27;;
 import { TalleresComponent } from &#x27;./talleres/talleres.component&#x27;;
 import { IndexAboutComponent } from &#x27;./index-about.component&#x27;;
-import { SharedModule } from &#x27;src/app/shared.module&#x27;;
+import { HttpLoaderFactory, SharedModule } from &#x27;src/app/shared.module&#x27;;
+import { TranslateLoader, TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -269,7 +271,19 @@ const routes: Routes &#x3D; [
     TalleresComponent,
     IndexAboutComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule], // include AppModule here
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    TranslateModule.forChild({
+      // Añade esto
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
 export class AboutModule {}
 </code></pre>

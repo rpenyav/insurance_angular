@@ -18,7 +18,9 @@ import { SaludParticularesComponent } from './particulares/salud-particulares/sa
 import { AhorroParticularesComponent } from './particulares/ahorro-particulares/ahorro-particulares.component';
 import { OtrosParticularesComponent } from './particulares/otros-particulares/otros-particulares.component';
 import { IndexServiciosComponent } from './index-servicios.component';
-import { SharedModule } from 'src/app/shared.module';
+import { HttpLoaderFactory, SharedModule } from 'src/app/shared.module';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -28,8 +30,8 @@ const routes: Routes = [
       { path: '', component: IndexServiciosComponent },
       { path: 'autonomos/salud', component: SaludAutonomosComponent },
       { path: 'autonomos/vehiculos', component: VehiculosAutonomosComponent },
-      { path: 'autonomos/comercio', component: ComercioAutonomosComponent },
-      { path: 'autonomos/accidente', component: AccidentesAutonomosComponent },
+      { path: 'autonomos/comercios', component: ComercioAutonomosComponent },
+      { path: 'autonomos/accidentes', component: AccidentesAutonomosComponent },
       { path: 'autonomos/pensiones', component: PensionesAutonomosComponent },
 
       { path: 'empresas/salud', component: SaludEmpresasComponent },
@@ -70,6 +72,12 @@ const routes: Routes = [
     OtrosParticularesComponent,
     IndexServiciosComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    TranslateModule.forChild(),
+  ],
+  exports: [IndexServiciosComponent],
 })
 export class ServiciosModule {}

@@ -5,7 +5,9 @@ import { PresupuestosComponent } from './presupuestos/presupuestos.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { IndexGestionesComponent } from './index-gestiones.component';
-import { SharedModule } from 'src/app/shared.module';
+import { HttpLoaderFactory, SharedModule } from 'src/app/shared.module';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -13,7 +15,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: IndexGestionesComponent },
-      { path: 'tramites-salud', component: TramitesSaludComponent },
+      { path: 'tramites', component: TramitesSaludComponent },
       { path: 'presupuestos', component: PresupuestosComponent },
     ],
   },
@@ -25,6 +27,12 @@ const routes: Routes = [
     PresupuestosComponent,
     IndexGestionesComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    TranslateModule.forChild(),
+  ],
+  exports: [IndexGestionesComponent],
 })
 export class GestionesModule {}

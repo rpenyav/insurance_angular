@@ -6,6 +6,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { Error400Component } from './pages/error-pages/error400.component';
 import { Error404Component } from './pages/error-pages/error404.component';
 import { Error500Component } from './pages/error-pages/error500.component';
+import { AboutUsComponent } from './pages/about/about-us/about-us.component';
+import { DisclaimersComponent } from './pages/disclaimers.component';
+import { SiteMapComponent } from './pages/site-map.component';
+import { SearchComponent } from './pages/search/search.component';
 
 /**
  * Define las rutas de la aplicación.
@@ -14,6 +18,18 @@ import { Error500Component } from './pages/error-pages/error500.component';
 const routes: Routes = [
   /** Ruta a la página principal, protegida por el guardia de autenticación. */
   { path: '', component: HomePageViewComponent, canActivate: [AuthGuard] },
+  { path: 'sitemap', component: SiteMapComponent, canActivate: [AuthGuard] },
+  {
+    path: 'disclaimers',
+    component: DisclaimersComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'about/aboutus',
+    component: AboutUsComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
 
   /** Ruta a la página de autenticación. */
   { path: 'login', component: AuthPageViewComponent },
