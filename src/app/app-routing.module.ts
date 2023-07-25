@@ -7,47 +7,79 @@ import { Error400Component } from './pages/error-pages/error400.component';
 import { Error404Component } from './pages/error-pages/error404.component';
 import { Error500Component } from './pages/error-pages/error500.component';
 
+/**
+ * Define las rutas de la aplicación.
+ * @type {Routes}
+ */
 const routes: Routes = [
+  /** Ruta a la página principal, protegida por el guardia de autenticación. */
   { path: '', component: HomePageViewComponent, canActivate: [AuthGuard] },
+
+  /** Ruta a la página de autenticación. */
   { path: 'login', component: AuthPageViewComponent },
 
+  /**
+   * Ruta al módulo "Acerca de", cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a 'about'.
+   */
   {
-    //rutas del modulo About
     path: 'about',
     loadChildren: () =>
       import('./pages/about/about.module').then((m) => m.AboutModule),
   },
+
+  /**
+   * Ruta al módulo "Gestiones", cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a 'gestiones'.
+   */
   {
-    //rutas del modulo Gestiones
     path: 'gestiones',
     loadChildren: () =>
       import('./pages/gestiones/gestiones.module').then(
         (m) => m.GestionesModule,
       ),
   },
+
+  /**
+   * Ruta al módulo "Servicios", cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a 'servicios'.
+   */
   {
-    //rutas del modulo Servicios
     path: 'servicios',
     loadChildren: () =>
       import('./pages/servicios/servicios.module').then(
         (m) => m.ServiciosModule,
       ),
   },
+
+  /**
+   * Ruta al módulo "Simulador", cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a 'simulador'.
+   */
   {
-    //rutas del modulo Simulador
     path: 'simulador',
     loadChildren: () =>
       import('./pages/simulador/simulador.module').then(
         (m) => m.SimuladorModule,
       ),
   },
+
+  /** Redirección al inicio si no se especifica una ruta. */
   { path: '', redirectTo: '/', pathMatch: 'full' },
+
+  /** Rutas a las páginas de error específicas. */
   { path: '404', component: Error404Component },
   { path: '500', component: Error500Component },
   { path: '400', component: Error400Component },
+
+  /** Redirección a la página de error 404 si se intenta acceder a una ruta no definida. */
   { path: '**', redirectTo: '/404' },
 ];
 
+/**
+ * Módulo de enrutamiento de la aplicación.
+ * Importa y exporta `RouterModule` con las rutas de la aplicación definidas.
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

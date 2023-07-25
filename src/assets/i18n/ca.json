@@ -9,5 +9,46 @@
     "auth_username_invalid": "El e-mail no es vàlid",
     "auth_password_minlength": "El passwrod ha de tenir més de 5 carácters",
     "auth_password_required": "El password es obligatori",
-    "home_title": "Títol"
+    "home_title": "Títol",
+    "menu": {
+        "servicios": {
+            "title": "Serveis",
+            "autonomos": {
+                "title": "Autònoms",
+                "accidentes": "Accidents",
+                "comercios": "Comerços",
+                "pensiones": "Pensions",
+                "salud": "Salut",
+                "vehiculos": "Vehicles"
+            },
+            "empresas": {
+                "title": "Empreses",
+                "pensiones": "Pensions",
+                "salud": "Salut",
+                "rc": "Responsabilitat Civil",
+                "otros": "Altres"
+            },
+            "particulares": {
+                "title": "Particulars",
+                "ahorro": "Estalvi",
+                "hogar": "Casa",
+                "salud": "Salut",
+                "vehiculo": "Vehicle",
+                "vida": "Vida",
+                "otros": "Altres"
+            }
+        },
+        "gestiones": {
+            "title": "Gestions",
+            "presupuestos": "Pressupostos",
+            "tramites": "Tràmits de Salut"
+        },
+        "aboutus": {
+            "title": "Sobre nosaltres",
+            "oficinas": "Oficines",
+            "about": "Sobre nosaltres",
+            "talleres": "Tallers",
+            "contacto": "Contacte"
+        }
+    }
 }

@@ -68,6 +68,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Los efectos son responsables de lidiar con acciones complejas y asincrónicas
+que probablemente incluyan interacciones con servicios externos (por ejemplo, APIs).</p>
+
+            </p>
 
 
 
@@ -113,12 +121,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/store/auth/auth.effects.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/store/auth/auth.effects.ts:70</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase AuthEffects.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -127,6 +137,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -141,6 +152,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Un observable de acciones.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -153,6 +168,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>El servicio de autenticación.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -202,10 +221,18 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/store/auth/auth.effects.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/store/auth/auth.effects.ts:24</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Maneja la acción de login.
+Si la autenticación es exitosa, despacha la acción loginSuccess.
+Si hay un error durante la autenticación, despacha la acción loginFailure.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -250,10 +277,19 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/store/auth/auth.effects.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/store/auth/auth.effects.ts:47</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Maneja la acción de refreshToken.
+Si la actualización del token es exitosa, despacha la acción refreshTokenSuccess.
+Si hay un error durante la actualización del token, despacha la acción refreshTokenFailure.
+En caso de que el token aún sea válido (error 409), despacha la acción tokenStillValid.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -271,8 +307,18 @@ import { of } from &#x27;rxjs&#x27;;
 import * as authActions from &#x27;./auth.actions&#x27;;
 import { AuthenticationService } from &#x27;../../services/authentication.service&#x27;;
 
+/**
+ * Los efectos son responsables de lidiar con acciones complejas y asincrónicas
+ * que probablemente incluyan interacciones con servicios externos (por ejemplo, APIs).
+ * @class
+ */
 @Injectable()
 export class AuthEffects {
+  /**
+   * Maneja la acción de login.
+   * Si la autenticación es exitosa, despacha la acción loginSuccess.
+   * Si hay un error durante la autenticación, despacha la acción loginFailure.
+   */
   login$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
       ofType(authActions.login),
@@ -290,6 +336,12 @@ export class AuthEffects {
     ),
   );
 
+  /**
+   * Maneja la acción de refreshToken.
+   * Si la actualización del token es exitosa, despacha la acción refreshTokenSuccess.
+   * Si hay un error durante la actualización del token, despacha la acción refreshTokenFailure.
+   * En caso de que el token aún sea válido (error 409), despacha la acción tokenStillValid.
+   */
   refreshToken$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
       ofType(authActions.refreshToken),
@@ -315,6 +367,12 @@ export class AuthEffects {
     ),
   );
 
+  /**
+   * Constructor de la clase AuthEffects.
+   * @constructor
+   * @param actions$ Un observable de acciones.
+   * @param authService El servicio de autenticación.
+   */
   constructor(
     private actions$: Actions,
     private authService: AuthenticationService,

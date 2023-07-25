@@ -87,47 +87,79 @@ import { Error400Component } from &#x27;./pages/error-pages/error400.component&#
 import { Error404Component } from &#x27;./pages/error-pages/error404.component&#x27;;
 import { Error500Component } from &#x27;./pages/error-pages/error500.component&#x27;;
 
+/**
+ * Define las rutas de la aplicación.
+ * @type {Routes}
+ */
 const routes: Routes &#x3D; [
+  /** Ruta a la página principal, protegida por el guardia de autenticación. */
   { path: &#x27;&#x27;, component: HomePageViewComponent, canActivate: [AuthGuard] },
+
+  /** Ruta a la página de autenticación. */
   { path: &#x27;login&#x27;, component: AuthPageViewComponent },
 
+  /**
+   * Ruta al módulo &quot;Acerca de&quot;, cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a &#x27;about&#x27;.
+   */
   {
-    //rutas del modulo About
     path: &#x27;about&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./pages/about/about.module&#x27;).then((m) &#x3D;&gt; m.AboutModule)&quot;,
   },
+
+  /**
+   * Ruta al módulo &quot;Gestiones&quot;, cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a &#x27;gestiones&#x27;.
+   */
   {
-    //rutas del modulo Gestiones
     path: &#x27;gestiones&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./pages/gestiones/gestiones.module&#x27;).then(\
         (m) &#x3D;&gt; m.GestionesModule,\
       )&quot;,
   },
+
+  /**
+   * Ruta al módulo &quot;Servicios&quot;, cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a &#x27;servicios&#x27;.
+   */
   {
-    //rutas del modulo Servicios
     path: &#x27;servicios&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./pages/servicios/servicios.module&#x27;).then(\
         (m) &#x3D;&gt; m.ServiciosModule,\
       )&quot;,
   },
+
+  /**
+   * Ruta al módulo &quot;Simulador&quot;, cargado de manera diferida.
+   * Se redirige a este módulo cuando se accede a &#x27;simulador&#x27;.
+   */
   {
-    //rutas del modulo Simulador
     path: &#x27;simulador&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./pages/simulador/simulador.module&#x27;).then(\
         (m) &#x3D;&gt; m.SimuladorModule,\
       )&quot;,
   },
+
+  /** Redirección al inicio si no se especifica una ruta. */
   { path: &#x27;&#x27;, redirectTo: &#x27;/&#x27;, pathMatch: &#x27;full&#x27; },
+
+  /** Rutas a las páginas de error específicas. */
   { path: &#x27;404&#x27;, component: Error404Component },
   { path: &#x27;500&#x27;, component: Error500Component },
   { path: &#x27;400&#x27;, component: Error400Component },
+
+  /** Redirección a la página de error 404 si se intenta acceder a una ruta no definida. */
   { path: &#x27;**&#x27;, redirectTo: &#x27;/404&#x27; },
 ];
 
+/**
+ * Módulo de enrutamiento de la aplicación.
+ * Importa y exporta &#x60;RouterModule&#x60; con las rutas de la aplicación definidas.
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
